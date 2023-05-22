@@ -87,6 +87,15 @@ Endpoint: http://localhost:3000/api/v1/users/:user_id/records
   >Requires: UUID and Token headers for user validation.
   >Needs "distance"
 
+## NGINX Configuration
+If you are using the docker-compose.yml file to run the application, NGINX will be configured automatically. 
+This project uses NGINX as a web server and reverse proxy. NGINX is configured to listen on port 80, which means your Rails application will be available at the server's IP address on port 80.
+
+To access from the nginx server, you can enter the following URL in your web browser:
+
+  >http://localhost:80
+
+
 ## Note on UUID Generation and PostgreSQL Version
 
 Please note that this project deviates from the conventional UUID generation method due to the use of PostgreSQL version 12. The `gen_random_uuid()` function, recommended for UUID generation, is not available in this version. As a result, an alternative method has been employed to generate UUIDs in this project, ensuring compatibility with PostgreSQL 12.
