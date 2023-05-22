@@ -1,6 +1,6 @@
 class RankingsController < ApplicationController
   def actual
-    @rankings = Ranking.all
+    @rankings = Ranking.all.paginate(page: page, per_page: 10)
     render 'rankings/actual'
   end
 
@@ -16,7 +16,16 @@ class RankingsController < ApplicationController
                     .group('users.id, users.name')
                     .select('users.id, users.name, SUM(records.distance) AS total_distance')
                     .order('total_distance DESC')
+                    .paginate(page: page, per_page: 10)
 
     render 'rankings/show'
   end
+
+  private
+
+  def page
+    params[:page] || 1
+  end
+  helper_method :page
 end
+

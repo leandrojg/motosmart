@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
+  include ActionController::Helpers
   before_action :authenticate_user
 
+  def page
+    params[:page] || 1
+  end
+  helper_method :page
+  
   private
 
   def authenticate_user
