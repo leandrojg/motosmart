@@ -55,6 +55,37 @@ To run the application without Docker, follow these steps:
 
 7. Access the application by navigating to http://localhost:3000 in your web browser.
 
+## Note for Postman Users
+For users of Postman, a Postman collection file named "MotoSmart.postman_collection.json" is available in the project repository. This file contains preconfigured API requests that you can import into your Postman application to interact with the MotoSmart API more conveniently. Feel free to utilize this collection to streamline your API testing and usage.
+
+## Routes
+The MotoSmart application provides the following main routes:
+
+**Users**
+Endpoint: http://localhost:3000/api/v1/users
+ 
+ GET: Retrieve the list of all users.
+  >Requires: UUID and Token headers for user validation.
+ 
+ POST: Create a new user.
+  >Does not require user validation.
+  >Needs "name", "email", "password".
+
+**Rankings**
+Endpoint: http://localhost:3000/api/v1/rankings
+
+ GET (/actual): Retrieve the total ranking of all users.
+ >Requires: UUID and Token headers for user validation.
+ 
+ GET (/:year/:month): Retrieve the ranking for a specific month.
+  >Requires: UUID and Token headers for user validation.
+
+**Records**
+Endpoint: http://localhost:3000/api/v1/users/:user_id/records
+
+ POST: Create a new record for the specified user.
+  >Requires: UUID and Token headers for user validation.
+  >Needs "distance"
 
 ## Note on UUID Generation and PostgreSQL Version
 
