@@ -21,7 +21,8 @@ Make sure you have Docker installed on your system. You can follow these steps t
    cd <APP_DIRECTORY_NAME>
 
 2. Run the following command to build the images and start the containers:
-  docker-compose up
+   ```bash
+   docker-compose up -d
 
 3. The application will be available at http://localhost:3000.
 
