@@ -11,7 +11,7 @@ if [ ! -f .env ]; then
 fi
 
 # Install gems if needed
-bundle check || bundle install
+bundle install
 
 # Precompile assets if needed
 bundle exec rails assets:precompile
