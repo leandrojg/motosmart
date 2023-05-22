@@ -38,11 +38,10 @@ To run the application without Docker, follow these steps:
    ```bash
    bundle install
 
-3. Set up the PostgreSQL database with the following configuration:
+3. Set up the .env file by copying the .env.example file and replacing the values with your own:
 
-  Username: motosmart
-  Password: emnetartnoc
-  Database: motosmart
+   ```bash
+   cp .env.example .env
 
 4. Run the database migrations:
   rails db:migrate
