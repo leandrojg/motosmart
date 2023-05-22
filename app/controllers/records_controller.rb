@@ -6,7 +6,7 @@ class RecordsController < ApplicationController
     @record = @user.records.new(record_params)
 
     if @record.save
-      render json: @record, status: :created
+      render 'records/create'
     else
       render json: @record.errors, status: :unprocessable_entity
     end
