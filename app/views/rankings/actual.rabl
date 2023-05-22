@@ -1,2 +1,2 @@
 collection @rankings
-attributes :id, :name, :distance
+attributes :id, :name, :total_distance

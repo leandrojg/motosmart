@@ -1,6 +1,6 @@
 class RankingsController < ApplicationController
   def actual
-    @rankings = ActiveRecord::Base.connection.execute('SELECT * FROM ranking')
+    @rankings = Ranking.all
     render 'rankings/actual'
   end
 
