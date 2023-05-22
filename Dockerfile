@@ -1,24 +1,26 @@
-# Utiliza la imagen oficial de Ruby 2.7.1 como imagen base
+# Use the official Ruby 2.7.1 image as the base image
 FROM ruby:2.7.1
 
-# Instala las dependencias del sistema requeridas para Rails
+# Install system dependencies required for Rails
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-# Crea un directorio de trabajo para tu aplicación en el contenedor
+# Create a working directory for your application inside the container
 WORKDIR /app
 
-# Instala Rails
+# Install Rails
 RUN gem install rails -v 5.2
 
-# Crea una nueva aplicación de Rails en el directorio de trabajo
+# Create a new Rails application in the working directory
 RUN rails new . --force --no-deps --skip-bundle
 
-# Instala las gemas requeridas
+# Install required gems
 RUN bundle install
 
-# Expone el puerto 3000 para acceder a tu aplicación Rails desde el exterior
+# Expose port 3000 to access your Rails application from outside
 EXPOSE 3000
 
-# Configura el comando de inicio del contenedor
+# Configure the container's startup command
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+
 

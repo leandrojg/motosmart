@@ -16,6 +16,7 @@ services:
       context: .
       dockerfile: Dockerfile
     command: sh -c "bundle check || bundle install && bundle exec rails server -b 0.0.0.0"
+    entrypoint: /bin/bash -c "chmod +x /app/entrypoint.sh && /app/entrypoint.sh"
     ports:
       - '3000:3000'
     volumes:

@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "7d8f789c-931e-4582-b033-fbb0980dd74c",
+		"name": "MotoSmart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15563090"
+	},
+	"item": [
+		{
+			"name": "User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"juan carlos\",\r\n    \"email\": \"juancarlos@email.com\",\r\n    \"password\": \"juancarlos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Actual Ranking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UUID",
+						"value": "acad956a-5a39-4f72-9cf6-7db7bd72de3f",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "72b74ac0-0564-4f5f-ab44-d9f097cef390",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/rankings/actual?page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"rankings",
+						"actual"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monthly Ranking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UUID",
+						"value": "acad956a-5a39-4f72-9cf6-7db7bd72de3f",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "72b74ac0-0564-4f5f-ab44-d9f097cef390",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/rankings/2023/03"
+			},
+			"response": []
+		},
+		{
+			"name": "Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"juan carlos\",\r\n    \"email\": \"sarasa@email.com\",\r\n    \"password\": \"prueba1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/users"
+			},
+			"response": []
+		}
+	]
+}
