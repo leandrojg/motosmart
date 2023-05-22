@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: postgres:12
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: motosmart
+      POSTGRES_PASSWORD: emnetartnoc
+      POSTGRES_DB: motosmart
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "bundle check || bundle install && bundle exec rails server -b 0.0.0.0"
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+volumes:
+  db_data:
